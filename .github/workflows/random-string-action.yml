@@ -25,5 +25,5 @@ jobs:
       - run: |
           ABC_TEMP_TOKEN=${{ steps.xxx.outputs.output1 }}
           echo "ABC_TOKEN=$ABC_TEMP_TOKEN" >> $GITHUB_ENV          
-          echo "::add-mask::$ABC_TOKEN"
-      - run: echo This is my token $ABC_TOKEN
+          echo "::add-mask::${{env.ABC_TOKEN}}"
+      - run: echo This is my token ${{env.ABC_TOKEN}}
