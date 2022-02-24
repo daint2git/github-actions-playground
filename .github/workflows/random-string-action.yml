@@ -13,7 +13,7 @@ jobs:
       - name: Random string
         id: xxx      
         uses: ./actions/random-string-action
-        shell: bash
+        # shell: bash
       - run: echo TOKEN_X=123abc
       - run: echo "TOKEN=$TOKEN_X" >> $GITHUB_ENV
       - run: echo "::add-mask::$TOKEN"
