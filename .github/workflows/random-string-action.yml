@@ -37,7 +37,7 @@ jobs:
       # - run: echo This is my token $ABC_XXX
       - id: sets-a-secret
         run: |
-          the_secret=$((RANDOM))
+          the_secret=$((${{ steps.xxx.outputs.output1 }}))
           echo "::set-output name=secret-number::$the_secret"
       - run: |
           echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
