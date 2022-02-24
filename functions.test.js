@@ -9,7 +9,7 @@ describe("functions", () => {
     expect(mul(1, 2)).toBe(2);
   });
 
-  test("div: 4 / 2 to equal 3", () => {
-    expect(mul(4, 2)).toBe(3);
+  test("div: 4 / 2 to equal 2", () => {
+    expect(mul(4, 2)).toBe(2);
   });
 });
