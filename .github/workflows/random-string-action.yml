@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Random string
-        id: xxx      
+        id: xxx
         uses: ./actions/random-string-action
         # shell: bash
       # - run: echo TOKEN_X=123abc
@@ -25,8 +25,8 @@ jobs:
       # - run: |
       #     echo "::add-mask::$ABC_TOKEN"
       #     ABC_TOKEN=${{ steps.xxx.outputs.output1 }}
-        #  echo "ABC_TOKEN=$the_secret" >> $GITHUB_ENV
-        # echo "ABC_TOKEN=${{ steps.xxx.outputs.output1 }}" >> $GITHUB_ENV
+      #  echo "ABC_TOKEN=$the_secret" >> $GITHUB_ENV
+      # echo "ABC_TOKEN=${{ steps.xxx.outputs.output1 }}" >> $GITHUB_ENV
       # - run: echo This is my token $ABC_TOKEN
 
       # - run: |
@@ -37,8 +37,7 @@ jobs:
       # - run: echo This is my token $ABC_XXX
       - id: sets-a-secret
         run: |
-          the_secret=$((${{ steps.xxx.outputs.output1 }}))
+          the_secret=${{ steps.xxx.outputs.output1 }}
           echo "::add-mask::$the_secret"
           echo "ABC_XXX=$the_secret" >> $GITHUB_ENV
-      - run: |
-          echo "the secret number is $ABC_XXX
+      - run: echo the secret number is $ABC_XXX
