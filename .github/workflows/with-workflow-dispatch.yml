@@ -1,0 +1,12 @@
+name: with-workflow-dispatch
+on:
+  push:
+    branches:
+      - main
+    workflow_dispatch:
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "TODAY=$(date +%y-%m-%d)" >> $GITHUB_ENV
+      - run: echo Hello, today is $TODAY
