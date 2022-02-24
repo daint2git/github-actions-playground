@@ -14,7 +14,8 @@ jobs:
         id: xxx      
         uses: ./actions/random-string-action
       - run: |
-          echo "TOKEN=123abc" >> $GITHUB_ENV
+          echo TOKEN_X=123abc
+          echo "TOKEN=$TOKEN_X" >> $GITHUB_ENV
           echo "::add-mask::$TOKEN"
-        shell: bash
+        # shell: bash
       - run: echo This is my token $TOKEN
