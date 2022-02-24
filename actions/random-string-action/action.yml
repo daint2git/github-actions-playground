@@ -9,4 +9,4 @@ outputs:
     description: "Output 1"
 runs:
   using: node12
-  main: cli.js
+  main: dist/index.js

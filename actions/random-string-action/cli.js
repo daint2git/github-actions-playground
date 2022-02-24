@@ -1,5 +1,5 @@
-const randomString = require("randomstring");
-const { program } = require("commander");
+import randomString from "randomstring";
+import { program } from "commander";
 
 program
   .command("rdstr")
