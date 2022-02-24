@@ -1,0 +1,14 @@
+name: random-string
+on:
+  pull_request:
+    branches:
+      - "**"
+    types: [opened, reopened, synchronize]
+jobs:
+  random-string:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Random string
+        uses: ./actions/random-string-action

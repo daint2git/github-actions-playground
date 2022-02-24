@@ -1,0 +1,7 @@
+name: Random string action
+description: Random a string
+inputs:
+outputs:
+runs:
+  using: node12
+  main: cli.js
