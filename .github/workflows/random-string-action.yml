@@ -13,5 +13,5 @@ jobs:
       - name: Random string
       - id: xxx      
         uses: ./actions/random-string-action
-      - run: echo random-string ${{ steps.xxx.outputs.output1 }}
-        shell: bash
+      # - run: echo random-string ${{ steps.xxx.outputs.output1 }}
+      #   shell: bash
