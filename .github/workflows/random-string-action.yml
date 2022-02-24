@@ -45,5 +45,7 @@ jobs:
 
       - id: sets-a-secret
         run: |
-          echo "::add-mask::${{ steps.xxx.outputs.output1 }}"
-      - run: echo the secret number is ${{ steps.xxx.outputs.output1 }}
+          the_secret=`aws codeartifact get-authorization-token`
+          echo "::add-mask::$the_secret"
+          echo "ABC_XXX=$the_secret" >> $GITHUB_ENV
+      - run: echo the secret number is $ABC_XXX
