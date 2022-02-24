@@ -35,9 +35,15 @@ jobs:
       #     echo "ABC_XXX=$ABC_XXX" >> $GITHUB_ENV
       #     echo "::add-mask::$ABC_XXX"
       # - run: echo This is my token $ABC_XXX
+
+      # - id: sets-a-secret
+      #   run: |
+      #     the_secret=${{ steps.xxx.outputs.output1 }}
+      #     echo "::add-mask::$the_secret"
+      #     echo "ABC_XXX=$the_secret" >> $GITHUB_ENV
+      # - run: echo the secret number is $ABC_XXX
+
       - id: sets-a-secret
         run: |
-          the_secret=${{ steps.xxx.outputs.output1 }}
-          echo "::add-mask::$the_secret"
-          echo "ABC_XXX=$the_secret" >> $GITHUB_ENV
-      - run: echo the secret number is $ABC_XXX
+          echo "::add-mask::${{ steps.xxx.outputs.output1 }}"
+      - run: echo the secret number is ${{ steps.xxx.outputs.output1 }}
