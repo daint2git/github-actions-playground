@@ -14,11 +14,15 @@ jobs:
         id: xxx      
         uses: ./actions/random-string-action
         # shell: bash
-      - run: echo TOKEN_X=123abc
-        shell: bash
-      - run: echo "TOKEN=$TOKEN_X" >> $GITHUB_ENV
-        shell: bash
-      - run: echo "::add-mask::$TOKEN"
-        shell: bash
-      - run: echo This is my token $TOKEN
-        shell: bash
+      # - run: echo TOKEN_X=123abc
+      #   shell: bash
+      # - run: echo "TOKEN=$TOKEN_X" >> $GITHUB_ENV
+      #   shell: bash
+      # - run: echo "::add-mask::$TOKEN"
+      #   shell: bash
+      # - run: echo This is my token $TOKEN
+      #   shell: bash
+        - run: |
+            ABC_TOKEN=${{ steps.xxx.outputs.output1 }}
+            echo "::add-mask::$ABC_TOKEN"
+        - run: echo This is my token $ABC_TOKEN
