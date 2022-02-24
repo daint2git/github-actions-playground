@@ -22,7 +22,7 @@ jobs:
       #   shell: bash
       # - run: echo This is my token $TOKEN
       #   shell: bash
-        - run: |
-            ABC_TOKEN=${{ steps.xxx.outputs.output1 }}
-            echo "::add-mask::$ABC_TOKEN"
-        - run: echo This is my token $ABC_TOKEN
+      - run: |
+          ABC_TOKEN=${{ steps.xxx.outputs.output1 }}
+          echo "::add-mask::$ABC_TOKEN"
+      - run: echo This is my token $ABC_TOKEN
