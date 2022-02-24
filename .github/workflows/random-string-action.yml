@@ -14,7 +14,7 @@ jobs:
         id: xxx      
         uses: ./actions/random-string-action
       - run: |
-          echo "TOKEN=${{ steps.xxx.outputs.output1 }}"
+          echo "TOKEN=123abc" >> $GITHUB_ENV
           echo "::add-mask::$TOKEN"
         shell: bash
       - run: echo This is my token $TOKEN
