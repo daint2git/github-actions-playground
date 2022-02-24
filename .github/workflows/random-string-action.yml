@@ -29,6 +29,7 @@ jobs:
         # echo "ABC_TOKEN=${{ steps.xxx.outputs.output1 }}" >> $GITHUB_ENV
       # - run: echo This is my token $ABC_TOKEN
       - run: |
+          echo xxx
           ABC_XXX="Mona The Octocat"
           echo "ABC_XXX=$ABC_XXX" >> $GITHUB_ENV
           echo "::add-mask::$ABC_XXX"
