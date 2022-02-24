@@ -18,5 +18,5 @@ runs:
     # - run: $GITHUB_ACTION_PATH/run.sh
     #   shell: bash
     - id: random-string-generator
-      run: echo "::set-output name=random-value::$(echo $GITHUB_ACTION_PATH/run.sh)"
+      run: echo "::set-output name=random-value::$GITHUB_ACTION_PATH/run.sh"
       shell: bash
