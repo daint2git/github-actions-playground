@@ -7,6 +7,11 @@ inputs:
 outputs:
   output-1:
     description: "Output 1"
+# runs:
+#   using: node12
+#   main: dist/index.js rdstr
 runs:
-  using: node12
-  main: dist/index.js rdstr
+  using: composite
+  steps:
+    - run: ${{ github.action_path }}/run.sh
+      shell: bash
