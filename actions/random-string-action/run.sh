@@ -7,13 +7,9 @@ if [ -z "$NODE_VERSION" ]; then
 
     ret=1
 else
-    # echo "Running using node $NODE_VERSION"
+    echo "Running using node $NODE_VERSION"
 
-    SCRIPT="node dist/index.js rdstr"
-
-    sudo chmod +x "${SCRIPT}"
-
-    "${ENV_SCRIPT}"
+    node dist/index.js rdstr
 
     ret=$?
 fi
