@@ -45,7 +45,7 @@ jobs:
 
       - id: sets-a-secret
         run: |
-          the_secret="aws codeartifact get-authorization-token"
+          the_secret=$(node --version)
           echo "::add-mask::$the_secret"
           echo "ABC_XXX=$the_secret" >> $GITHUB_ENV
       - run: echo the secret number is $ABC_XXX
