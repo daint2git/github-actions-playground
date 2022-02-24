@@ -5,13 +5,18 @@ inputs:
     description: "Input 1"
     required: false
 outputs:
-  output-1:
-    description: "Output 1"
+  output1:
+    description: "Random string"
+    value: ${{ steps.random-string-generator.outputs.random-value }}
 # runs:
 #   using: node12
 #   main: dist/index.js rdstr
 runs:
   using: composite
   steps:
-    - run: ${{ github.action_path }}/run.sh
+    # - run: ${{ github.action_path }}/run.sh
+    # - run: $GITHUB_ACTION_PATH/run.sh
+    #   shell: bash
+    - id: random-string-generator
+      run: echo "::set-output name=random-value::$(echo $GITHUB_ACTION_PATH/run.sh)"
       shell: bash

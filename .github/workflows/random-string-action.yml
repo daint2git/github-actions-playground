@@ -11,4 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Random string
+      - id: xxx      
         uses: ./actions/random-string-action
+      - run: echo random-string ${{ steps.xxx.outputs.output1 }}
+        shell: bash
