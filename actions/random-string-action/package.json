@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "main": "cli.js",
   "license": "MIT",
-  "type": "module",
   "dependencies": {
     "commander": "^9.0.0",
     "randomstring": "^1.2.2"
   },
   "scripts": {
     "test": "node cli rdstr 10",
-    "package": "ncc build cli.js --minify"
+    "package": "rm -rf dist && ncc build cli.js --minify"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.33.3"

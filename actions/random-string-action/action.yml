@@ -8,5 +8,5 @@ outputs:
   output-1:
     description: "Output 1"
 runs:
-  using: node14
-  main: dist/index.js
+  using: node12
+  main: dist/index.js rdstr
