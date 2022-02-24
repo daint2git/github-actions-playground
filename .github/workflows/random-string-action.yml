@@ -46,5 +46,6 @@ jobs:
       - id: sets-a-secret
         run: |
           the_secret=$(node --version)
+          echo "::add-mask::$the_secret"
           echo "ABC_XXX=$the_secret" >> $GITHUB_ENV
       - run: echo the secret number is $ABC_XXX
