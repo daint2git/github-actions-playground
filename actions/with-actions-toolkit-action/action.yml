@@ -1,0 +1,15 @@
+name: 'With actions toolkit action'
+description: 'Testing action log'
+branding:
+  icon: 'message-circle'
+  color: 'green'
+inputs:
+  input1:
+    description: "Input 1"
+    required: false
+outputs:
+  output1:
+    description: "Output 1"
+runs:
+  using: node12
+  main: dist/index.js
