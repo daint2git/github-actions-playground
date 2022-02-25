@@ -11,6 +11,17 @@ import {
   setSecret,
 } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
+import { EmitterWebhookEvent } from "@octokit/webhooks";
+
+if (context.eventName === "pull_request") {
+  const { pull_request } =
+    context.payload as EmitterWebhookEvent<"pull_request">["payload"];
+
+  info("The pull_request base is:");
+  info(JSON.stringify(pull_request.base, null, 2));
+  info("The pull_request head is:");
+  info(JSON.stringify(pull_request.head, null, 2));
+}
 
 info("start");
 info(JSON.stringify(context, null, 2));
