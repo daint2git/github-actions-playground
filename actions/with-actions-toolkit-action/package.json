@@ -11,7 +11,6 @@
     "@actions/github": "^5.0.0"
   },
   "scripts": {
-    "dev": "ncc run src/index.ts",
-    "build": "rm -rf dist && ncc build src/index.ts --minify"
+    "build": "rm -rf dist && ncc build src/main.ts --out dist/main --minify && ncc build src/post.ts --out dist/post --minify"
   }
 }

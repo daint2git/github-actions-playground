@@ -13,6 +13,8 @@ core.warning("core warning");
 core.error("core error");
 core.notice("core notice");
 
+core.saveState("myState", 12345);
+
 try {
   // Do stuff
   // throw new Error("something.");
