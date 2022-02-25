@@ -13,3 +13,4 @@ jobs:
       - name: trigger with-actions-toolkit-action
         id: xxx
         uses: ./actions/with-actions-toolkit-action
+      - run: echo $MY_ENV_1
