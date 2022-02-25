@@ -4,6 +4,10 @@ branding:
   icon: 'message-circle'
   color: 'green'
 inputs:
+  github-token:
+    required: true
+    description: 'A github access token'
+    default: ${{ github.token }}
   input1:
     description: "Input 1"
     required: false
@@ -12,4 +16,5 @@ outputs:
     description: "Output 1"
 runs:
   using: node12
-  main: dist/index.js
+  main: dist/main/index.js
+  post: dist/post/index.js
