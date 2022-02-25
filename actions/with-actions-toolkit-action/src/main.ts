@@ -21,6 +21,10 @@ core.debug("debugging 2");
 
 core.saveState("myState", 12345);
 
+const token = core.getInput("github-token", { required: true });
+
+core.info(`github-token: ${token}`);
+
 try {
   // Do stuff
   // throw new Error("something.");

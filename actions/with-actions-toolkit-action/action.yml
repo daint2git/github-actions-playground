@@ -4,6 +4,10 @@ branding:
   icon: 'message-circle'
   color: 'green'
 inputs:
+  github-token:
+    required: true
+    description: 'A github access token'
+    default: ${{ github.token }}
   input1:
     description: "Input 1"
     required: false
