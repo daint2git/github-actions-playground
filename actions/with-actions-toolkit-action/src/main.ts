@@ -32,3 +32,17 @@ try {
   // setFailed logs the message and sets a failing exit code
   core.setFailed(`Action failed with error ${err}`);
 }
+
+(async function () {
+  const octokit = github.getOctokit(token);
+  const { data: pullRequest } = await octokit.rest.pulls.get({
+    owner: "octokit",
+    repo: "rest.js",
+    pull_number: 123,
+    mediaType: {
+      format: "diff",
+    },
+  });
+
+  core.info(JSON.stringify(pullRequest, null, 2))
+})();
