@@ -40,7 +40,7 @@ try {
     repo: "rest.js",
     pull_number: 123,
     mediaType: {
-      format: "diff",
+      format: "json",
     },
   });
 
