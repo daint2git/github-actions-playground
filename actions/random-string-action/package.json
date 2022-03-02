@@ -1,7 +1,6 @@
 {
   "name": "random-string-action",
   "version": "1.0.0",
-  "main": "cli.js",
   "license": "MIT",
   "dependencies": {
     "commander": "^9.0.0",
@@ -9,7 +8,7 @@
   },
   "scripts": {
     "test": "node cli rdstr 10",
-    "package": "rm -rf dist && ncc build cli.js --minify"
+    "package": "rm -rf dist && ncc build cli.js --minify --license licenses.txt"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.33.3"
