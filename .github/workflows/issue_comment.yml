@@ -1,0 +1,11 @@
+name: issue-comment
+on:
+  issue_comment:
+    branches:
+      - '**'
+    # types: [opened, labeled, unlabeled]
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo issue-comment

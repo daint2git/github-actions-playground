@@ -1,0 +1,11 @@
+name: pull-request-review-comment
+on:
+  pull_request_review_comment:
+    branches:
+      - '**'
+    # types: [opened, labeled, unlabeled]
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo pull-request-review-comment
