@@ -1,0 +1,23 @@
+name: Random string action
+description: Random a string
+inputs:
+  input1:
+    description: "Input 1"
+    required: false
+outputs:
+  output1:
+    description: "Random string"
+    value: ${{ steps.random-string-generator.outputs.random-value }}
+# runs:
+#   using: node12
+#   main: dist/index.js rdstr
+runs:
+  using: composite
+  steps:
+    # - run: ${{ github.action_path }}/run.sh
+    # - run: $GITHUB_ACTION_PATH/run.sh
+    #   shell: bash
+    - id: random-string-generator
+      # run: echo "::set-output name=random-value::$GITHUB_ACTION_PATH/run.sh"
+      run: echo "::set-output name=random-value::$(echo $RANDOM)"
+      shell: bash
