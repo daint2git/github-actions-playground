@@ -15,3 +15,4 @@ jobs:
         with:
           package-manager: yarn
           test-script: yarn jest
+          annotations: failed-tests
