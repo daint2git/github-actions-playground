@@ -14,13 +14,21 @@ jobs:
     env:
       Greeting: Hello
     steps:
-      - name: "Say Hello Mona it's Monday1"
-        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-        env:
-          First_Name: Mona
-      - name: "Say Hello Mona it's Monday2"
-        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
-        run: echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
-        env:
-          First_Name: Mona
+      # - name: "Say Hello Mona it's Monday1"
+      #   if: ${{ env.DAY_OF_WEEK == 'Monday' }}
+      #   run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+      #   env:
+      #     First_Name: Mona
+      # - name: "Say Hello Mona it's Monday2"
+      #   if: ${{ env.DAY_OF_WEEK == 'Monday' }}
+      #   run: echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
+      #   env:
+      #     First_Name: Mona
+      - name: "all github"
+        run: github
+      - name: "all env"
+        run: env
+      - name: "x1"
+        run: echo ${GITHUB_SHA}
+      - name: "x2"
+        run: echo ${GITHUB_SHA} | cut -c1-8
