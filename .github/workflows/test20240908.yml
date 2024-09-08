@@ -25,7 +25,7 @@ jobs:
       #   env:
       #     First_Name: Mona
       - name: "all github"
-        run: github
+        run: echo ${{ github.sha }}
       - name: "all env"
         run: env
       - name: "x1"
